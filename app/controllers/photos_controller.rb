@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-    before_action :redirect_if_not_logged_in, only: [:show, :edit, :update, :create, :destroy]
+    before_action :redirect_if_not_logged_in, only: [:new, :show, :edit, :update, :create, :destroy]
     before_action :find_photo, only: [:show, :edit, :update, :create, :destroy]
 
 

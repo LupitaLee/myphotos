@@ -9,10 +9,10 @@ module ApplicationHelper
     end
 
     def redirect_if_not_logged_in
-        redirect login_path if !logged_in?
+        redirect_to login_path if !logged_in?
     end
 
     def redirect_if_logged_in
-        redirect root_path if logged_in?
+        rredirect_to  root_path if logged_in?
     end
 end

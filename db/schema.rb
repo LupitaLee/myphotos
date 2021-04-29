@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_04_29_132248) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "provider"
     t.string "uid"
+    t.string "name"
   end
 
   add_foreign_key "comments", "photos"

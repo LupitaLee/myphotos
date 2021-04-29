@@ -29,6 +29,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bcrypt'
 
+
+gem 'omniauth-google-oauth2'
+gem 'dotenv-rails'
+gem "omniauth-rails_csrf_protection"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'

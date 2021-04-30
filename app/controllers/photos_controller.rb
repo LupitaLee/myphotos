@@ -6,7 +6,8 @@ class PhotosController < ApplicationController
 
 
     def index
-        @photos = Photo.all
+      
+        @photos = current_user.photos
        
        
     end
@@ -20,13 +21,14 @@ class PhotosController < ApplicationController
    #when curren user al ready has it and why wont redirect to photo_path and does for photos path 
     def create
        
+        
         @photo = current_user.photos.build(photo_params)
-
-        @photo.user_id = current_user.id
-    
         if @photo.save
+        
             redirect_to photo_path(@photo)
+            
         else
+           
             render :new
         end
     end
@@ -43,7 +45,7 @@ class PhotosController < ApplicationController
        
         @photo.update(photo_params)
         if @photo.save 
-            redirect_to photo_path
+            redirect_to photo_path(@photo)
         else
             render :edit
         end
@@ -55,7 +57,7 @@ class PhotosController < ApplicationController
      
         @photo.destroy 
         flash[:notice]= "Photo deleted"
-        redirect_to photo_path 
+        redirect_to photos_path 
 
     end
 

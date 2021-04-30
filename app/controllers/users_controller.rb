@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+    
+
     def new
         @user = User.new
 
@@ -11,7 +13,7 @@ class UsersController < ApplicationController
         if @user.save
             flash[:message] = "Succesfully signed up"
             session[:user_id] = @user.id
-            redirect_to root_path
+            redirect_to account_path
         else 
 
             render :new
@@ -24,6 +26,10 @@ class UsersController < ApplicationController
     def show
         @user = User.find(params[:id])
 
+    end
+
+    def account
+        @user = User.find(params[:id])
     end
 
     def user_params

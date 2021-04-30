@@ -7,6 +7,13 @@
 <section class="container-fluid bg2">
 
 
+<h1>Welcome!  <%= current_user.name %></h1>
+
+<%= link_to 'Add a Photo', new_photo_path, class: 'nav-link' %>
+
+
+
+
 <% @photos.each do |photo| %>
 <%= photo.title %>
  

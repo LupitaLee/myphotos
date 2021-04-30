@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :show, :edit, :update, :create, :destroy]
     before_action :find_photo, only: [:show, :edit, :update, :create, :destroy]
+    # validates :title, presence: true
 
 
 
@@ -13,9 +14,7 @@ class PhotosController < ApplicationController
     def new
         @photo = Photo.new 
     end
-    def show 
-       
-    end
+    
     
     #question ------ why i hhave to use photo.user_id = current_user.id 
    #when curren user al ready has it and why wont redirect to photo_path and does for photos path 
@@ -31,10 +30,14 @@ class PhotosController < ApplicationController
             render :new
         end
     end
-
+    def show 
+       
+    end
     def edit 
        
     end
+
+
 
     def update 
        
@@ -45,6 +48,8 @@ class PhotosController < ApplicationController
             render :edit
         end
     end
+
+    
 
     def destroy
      

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         if @user.save
             flash[:message] = "Succesfully signed up"
             session[:user_id] = @user.id
-            redirect_to account_path
+            redirect_to photos_path
         else 
 
             render :new
@@ -28,9 +28,7 @@ class UsersController < ApplicationController
 
     end
 
-    def account
-        @user = User.find(params[:id])
-    end
+    
 
     def user_params
         params.require(:user).permit(:username, :email, :password)

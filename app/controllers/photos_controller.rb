@@ -1,15 +1,11 @@
 class PhotosController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :show, :edit, :update, :create, :destroy]
     before_action :find_photo, only: [:show, :edit, :update, :create, :destroy]
-    # validates :title, presence: true
+    
 
-
-
+   
     def index
-      
         @photos = current_user.photos
-       
-       
     end
 
     def new
@@ -23,16 +19,20 @@ class PhotosController < ApplicationController
        
         
         @photo = current_user.photos.build(photo_params)
+
+
         if @photo.save
+            flash[:message] = "Photo Added Sucessfully!"
         
             redirect_to photo_path(@photo)
             
         else
-           
+            flash[:message] = "There was an Error please try again "
             render :new
         end
     end
     def show 
+        # @comment = Comment.new
        
     end
     def edit 
@@ -71,6 +71,7 @@ class PhotosController < ApplicationController
     def find_photo
         @photo = Photo.find_by(id: params[:id])
     end
+
 
  
 

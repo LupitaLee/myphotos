@@ -1,0 +1,9 @@
+<%= form_for([@photo,@photo.comments.build]) do |f| %>
+<p>
+<%= f.label :content %>
+<%= f.text_area :content %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+</p> <br>
+<%= f.submit %>
+<% end %>
+

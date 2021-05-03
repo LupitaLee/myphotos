@@ -2,6 +2,8 @@
 
 
 
+<%= render partial: 'errors/errors', locals: {model: @photo} %>
+
 
 <h1>Photo</h1>
 
@@ -10,5 +12,27 @@
 <%= link_to 'Edit a Photo', edit_photo_path, class: 'nav-link' %><br>
 
 <!------>
-<%= button_to 'Delete Photo', photo_path, class: 'nav-link', method: :delete%>
 
+<%= button_to 'Delete Photo', photo_path, class: 'nav-link', method: :delete%> <br>
+
+
+
+
+
+
+
+<h2><%= @photo.comments.count %> Comments</h2>
+
+<% @photo.comments.each do |comment| %>
+<%= comment.content %> <br>
+<% end %> <br>
+<!------
+<h3>Add a Comments:</h3>
+
+<%= render "comments/form" %>  
+
+
+---->
+
+
+<%= link_to 'Add a new Comment', new_photo_comment_path(@photo) %>

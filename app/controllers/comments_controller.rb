@@ -1,57 +1,53 @@
 class CommentsController < ApplicationController
 
-    before_action :set_comment, only: [:show, :edit, :update, :create, :destroy]
+    before_action :find_photo, only: [:show, :new, :edit, :update, :create, :destroy]
+    
+
+    def create  
+    
+        @photo = Photo.find(params[:photo_id])
+        # @photo = Photo.find_by(id: params[:id])
+        @comment = @photo.comments.build(params[:comment].permit(:content, :photo_id, :user_id))
+        @photo.comments << @comment
+        redirect_to photo_path(@photo)
+       
+    end
 
     def index
-        @comments = Comment.all
-    end
-
-    def new
-        @comment = Comment.new 
-    end
-    def show 
-       
-    end
-    
-    def create
-        @comment.new(comment_params)
-        if @comment.save
-            redirect_to comment_path
-        else
-            render :new
-        end
-    end
-
-    def edit 
-       
-    end
-
-    def update 
-       
-        @comment.update(comment_params)
-        if @comment.save 
-            redirect_to comment_path
-        else
-            render :edit
-        end
-    end
-
-    def destroy
+        if @photo
      
+        @comments = @photo.comments
+        else   
+
+        @comments = current_user.comments
+        end
+
+    end
+
+    def show 
+
+    end
+    def new
+        @comment = Comment.new
+    end
+
+    
+   
+    def destroy
+       
+        @comment = @photo.comments.find(params[:id])
         @comment.destroy 
         flash[:notice]= "Photo deleted"
-        redirect_to comment_path 
+        redirect_to photo_path(@photo)
 
     end
 
 
     private
 
-    def comment_params
-        params.require(:comment).permit(:content)
-    end
 
-    def set_comment
-        @comment = Comment.find(params[:id])
+
+    def find_photo
+        @photo = Photo.find(params[:photo_id])
     end
 end

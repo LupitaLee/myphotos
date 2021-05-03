@@ -1,12 +1,11 @@
 class CommentsController < ApplicationController
 
-    before_action :find_photo, only: [:show, :new, :edit, :update, :create, :destroy]
+    before_action :find_photo, only: [:show, :new, :edit, :update, :create]
     
 
     def create  
     
         @photo = Photo.find(params[:photo_id])
-        # @photo = Photo.find_by(id: params[:id])
         @comment = @photo.comments.build(params[:comment].permit(:content, :photo_id, :user_id))
         @photo.comments << @comment
         redirect_to photo_path(@photo)
@@ -33,14 +32,14 @@ class CommentsController < ApplicationController
 
     
    
-    def destroy
-       
-        @comment = @photo.comments.find(params[:id])
-        @comment.destroy 
-        flash[:notice]= "Photo deleted"
-        redirect_to photo_path(@photo)
+    # def destroy
+    #    @photo = Photo.find_by(id: params[:photo_id])
+    #     @comment = @photo.comments.find(params[:id])
+    #     @comment.destroy 
+    #     flash[:notice]= "Photo deleted"
+    #     redirect_to photo_path(@photo)
 
-    end
+    # end
 
 
     private
@@ -48,6 +47,7 @@ class CommentsController < ApplicationController
 
 
     def find_photo
+       
         @photo = Photo.find(params[:photo_id])
     end
 end

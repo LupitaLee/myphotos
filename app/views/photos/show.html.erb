@@ -2,7 +2,7 @@
 
 
 
-<%= render partial: 'errors/errors', locals: {model: @photo} %>
+
 
 
 <h1>Photo</h1>
@@ -25,14 +25,12 @@
 
 <% @photo.comments.each do |comment| %>
 <%= comment.content %> <br>
-<% end %> <br>
-<!------
-<h3>Add a Comments:</h3>
-
-<%= render "comments/form" %>  
 
 
----->
+
+
+<% end %> <br>   
+
 
 
 <%= link_to 'Add a new Comment', new_photo_comment_path(@photo) %>

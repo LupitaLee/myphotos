@@ -1,16 +1,21 @@
 class PhotosController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :show, :edit, :update, :create, :destroy]
     before_action :find_photo, only: [:show, :edit, :update, :create, :destroy]
-    
-
-   
-    def index
-        @photos = current_user.photos
-    end
+ 
 
     def new
         @photo = Photo.new 
     end
+
+
+    def index
+        @photos = current_user.photos
+        if params[:q] && !params[:q].empty?
+            @photos = @photos.search(params[:q].downcase)#search the collection we already have 
+        end
+    end
+
+    
     
     
     #question ------ why i hhave to use photo.user_id = current_user.id 
@@ -19,9 +24,10 @@ class PhotosController < ApplicationController
        
         
         @photo = current_user.photos.build(photo_params)
+        @photo.save
 
 
-        if @photo.save
+        if @photo.valid?
             flash[:message] = "Photo Added Sucessfully!"
         
             redirect_to photo_path(@photo)

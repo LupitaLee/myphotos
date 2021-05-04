@@ -19,14 +19,18 @@ class UsersController < ApplicationController
             render :new
         end
 
+      
+
 
     end
     
+    def index
 
-    # def show
-    #     @user = User.find(params[:id])
+        @users = User.all
+      
+    end
 
-    # end
+   
 
     
 

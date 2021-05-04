@@ -1,0 +1,10 @@
+
+
+
+  <% @users.each do |user| %>
+ Username:  <%= user.username%> <br> <br>
+       <% user.photos.each do |photo|%>
+      Title:  <%= link_to photo.title, photo_path(photo)%> <br> 
+        
+        <% end %>
+    <% end %>

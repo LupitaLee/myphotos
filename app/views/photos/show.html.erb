@@ -21,16 +21,14 @@
 
 
 
-<h2><%= @photo.comments.count %> Comments</h2>
+<h2><%= @photo.comments.count %> Comments</h2> <br>
+
+<%= link_to 'Add a new Comment', new_photo_comment_path(@photo) %> <br>
 
 <% @photo.comments.each do |comment| %>
 <%= comment.content %> <br>
 
-
-
-
 <% end %> <br>   
 
 
-
-<%= link_to 'Add a new Comment', new_photo_comment_path(@photo) %>
+<%= link_to 'View all Comments', photo_comments_path(@photo) %> <br>

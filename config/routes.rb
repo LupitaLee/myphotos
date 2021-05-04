@@ -8,13 +8,13 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
 
-  delete '/logout', to: 'sessions#logout'# destroy ?
+  delete '/logout', to: 'sessions#logout'
 
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
 
   resources :users
   resources :photos do
-    resources :comments
+    resources :comments, only: [:new, :create, :index]
 
   end
   

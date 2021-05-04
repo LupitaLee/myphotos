@@ -18,8 +18,7 @@ class PhotosController < ApplicationController
     
     
     
-    #question ------ why i hhave to use photo.user_id = current_user.id 
-   #when curren user al ready has it and why wont redirect to photo_path and does for photos path 
+
     def create
        
         
@@ -38,7 +37,7 @@ class PhotosController < ApplicationController
         end
     end
     def show 
-        # @comment = Comment.new
+        
        
     end
     def edit 

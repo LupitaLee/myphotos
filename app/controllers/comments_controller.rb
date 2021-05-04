@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
         else   
 
         @comments = current_user.comments
+          #order the comments 
         end
 
     end
@@ -32,15 +33,7 @@ class CommentsController < ApplicationController
 
     
    
-    # def destroy
-    #    @photo = Photo.find_by(id: params[:photo_id])
-    #     @comment = @photo.comments.find(params[:id])
-    #     @comment.destroy 
-    #     flash[:notice]= "Photo deleted"
-    #     redirect_to photo_path(@photo)
-
-    # end
-
+  
 
     private
 

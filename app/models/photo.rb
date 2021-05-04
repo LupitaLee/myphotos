@@ -7,8 +7,4 @@ class Photo < ApplicationRecord
   scope :search, -> (params){where("LOWER(title)= ?", params)}
  
   
-
-  # def self.search(params)
-  #   where("LOWER(title)= ?", params)
-  # end
 end

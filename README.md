@@ -17,7 +17,7 @@ cd into the myphotos directory run bundle install in your console run shotgun op
 
 Click this link to see a brief description on how to use the program.
 
----- add link of video --- 
+https://drive.google.com/file/d/1me6Qfd5oRFBdT5CmxWm1sKIPq6P4EF8k/view?usp=sharing
 
 
 ## Contributing

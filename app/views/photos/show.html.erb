@@ -8,14 +8,13 @@
 <h1>Photo</h1>
 
 <h2><%= @photo.title %></h2>
-
+<% if @photo.user_id == current_user.id%>
 <%= link_to 'Edit a Photo', edit_photo_path, class: 'nav-link' %><br>
 
-<!------>
 
 <%= button_to 'Delete Photo', photo_path, class: 'nav-link', method: :delete%> <br>
 
-
+<%end%>
 
 
 

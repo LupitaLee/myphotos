@@ -22,7 +22,7 @@
 
 <h2><%= @photo.comments.count %> Comments</h2> <br>
 
-<%= link_to 'Add a new Comment', new_photo_comment_path(@photo) %> <br>
+<%= link_to 'Add a new Comment', new_photo_comment_path(@photo) %> <br><br>
 
 <% @photo.comments.each do |comment| %>
 <%= comment.content %> <br>
@@ -30,4 +30,7 @@
 <% end %> <br>   
 
 
-<%= link_to 'View all Comments', photo_comments_path(@photo) %> <br>
+<%= link_to 'View all Comments', photo_comments_path(@photo) %> <br> <br>
+
+
+

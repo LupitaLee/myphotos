@@ -9,6 +9,7 @@ class PhotosController < ApplicationController
 
 
     def index
+       
         @photos = current_user.photos
         if params[:q] && !params[:q].empty?
             @photos = @photos.search(params[:q].downcase)#search the collection we already have 

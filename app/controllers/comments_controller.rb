@@ -18,8 +18,8 @@ class CommentsController < ApplicationController
         @comments = @photo.comments
         else   
 
-        @comments = current_user.comments
-          #order the comments 
+        @comments = current_user.comments.comment_order
+         
         end
 
     end

@@ -10,10 +10,11 @@ class PhotosController < ApplicationController
 
     def index
        
-        @photos = current_user.photos
+        @photos = current_user.photos.desc_order
         if params[:q] && !params[:q].empty?
             @photos = @photos.search(params[:q].downcase)#search the collection we already have 
         end
+    
     end
 
     
@@ -37,10 +38,11 @@ class PhotosController < ApplicationController
             render :new
         end
     end
+
     def show 
-        
        
     end
+
     def edit 
        
     end
@@ -77,8 +79,5 @@ class PhotosController < ApplicationController
     def find_photo
         @photo = Photo.find_by(id: params[:id])
     end
-
-
- 
 
 end

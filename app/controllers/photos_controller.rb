@@ -12,7 +12,7 @@ class PhotosController < ApplicationController
        
         @photos = current_user.photos.desc_order
         if params[:q] && !params[:q].empty?
-            @photos = @photos.search(params[:q].downcase)#search the collection we already have 
+            @photos = @photos.search(params[:q].downcase)
         end
     
     end

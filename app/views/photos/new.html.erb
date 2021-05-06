@@ -1,4 +1,11 @@
 
+
+<section class="container-fluid bg5">
+
+<div class="add-box">
+
+
+
 <%= render partial: 'errors/errors', locals: {model: @photo} %>
 
 <%= form_for(@photo)do |f| %>
@@ -11,3 +18,8 @@
 <%= f.text_field :image %>
 <%= f.submit 'Submit Photo' %>
 <% end %>
+
+
+</div>
+
+</section>

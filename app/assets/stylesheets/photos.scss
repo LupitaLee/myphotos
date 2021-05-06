@@ -1,3 +1,79 @@
 // Place all the styles related to the Photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.bg3{
+  
+    background: url("https://images.unsplash.com/photo-1501250523374-8f78abda6b86?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fGZsb3dlcnN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60://imageshttps://images.unsplash.com/photo-1528568731601-7ebad185aae2?ixid=https://images.unsplash.com/photo-1501250523374-8f78abda6b86?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fGZsb3dlcnN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60.unsplash.com/photo-1487147264018-f937fba0c817?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGZsb3dlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60https://images.unsplash.com/photo-1559401285-f88a11a82de5?ixid=https://images.unsplash.com/photo-1531131141161-ecdfb1858dd2?ixid=MnwxMjA3fDB8MHxzZWFyhttps://images.unsplash.com/photo-1487147264018-f937fba0c817?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGZsb3dlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60Y2h8OXx8Zmxvd2Vyc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60ttps://images.unsplash.com/photo-1616837890775-2a9832e7e8a9?ixid=https://images.unsplash.com/photo-1559401285-f88a11a82de5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fGxpZ2h0JTIwYnJvd24lMjB3b29kJTIwZmxvd2Vyc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    width: 100%;
+    height: 100vh;
+    background-size: 100%;
+
+}
+
+
+.bg2{
+  
+    background: url("https://images.unsplash.com/photo-1554189097-ffe88e998a2b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHBpbmt8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    width: 100%;
+    height: 100vh;
+    background-size: 100%;
+
+}
+@media only screen and (max-with: 678px) {
+.add-box1{
+        background-size:300%
+    }
+}
+
+
+.h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+    
+.add-box1 p{
+     margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+    
+.add-box1 input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+    
+.add-box1 input[type="text"],input[type="title"]
+{
+    border: none; 
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    
+}
+    
+.add-box1 input[type="submit"]
+{
+    border: none; 
+    outline: none;
+    width: 20%;
+    height: 40px;
+    background:  rgb(175, 107, 118);
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+}
+    
+.add-box1 input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: pink;
+    color: rgb(0, 0, 0);
+    
+}

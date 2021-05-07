@@ -7,7 +7,8 @@ class CommentsController < ApplicationController
     
         @photo = Photo.find(params[:photo_id])
         @comment = @photo.comments.build(params[:comment].permit(:content, :photo_id, :user_id))
-        @photo.comments << @comment
+         @comment.save 
+        flash[:message] = "yay! you just commented"
         redirect_to photo_path(@photo)
        
     end

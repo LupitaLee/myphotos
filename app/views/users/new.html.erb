@@ -8,7 +8,7 @@
 <h1>Sign Up </h1>
 <%= render partial: 'errors/errors', locals: {model: @user } if @user %>
 
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, url: "/signup")  do |f| %>
 
     <%= f.label :username %>
     <%= f.text_field :username %><br>

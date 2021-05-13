@@ -10,12 +10,17 @@ Rails.application.routes.draw do
 
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
 
+  get '/photos/most_commented', to: 'photos#most_commented'
+
   resources :users
   resources :photos do
     resources :comments, only: [:new, :create, :index]
 
   end
   
+# custom route that goes to /photos/most_commented 
+#have a scope method that will organize 
+#the photo by the one that has the most comments to use active record scope method 
   
   
   

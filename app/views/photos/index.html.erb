@@ -31,6 +31,11 @@
    
 <% end  %><br>
 
-
+<h2>all commented photos</h2>
+<% @commented_photos.each do |photo| %> <br>
+<%= link_to photo.title, photo_path(photo) %>
+<% end %>
 
 </section>
+
+

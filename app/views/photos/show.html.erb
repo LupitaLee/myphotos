@@ -30,9 +30,11 @@
 <%= link_to 'Add a new Comment', new_photo_comment_path(@photo) %> <br><br>
 
 <% @photo.comments.each do |comment| %>
-<%= comment.user.username.capitalize %> <%= comment.content %> <br>
+<%= comment.user.username.capitalize %> - <%=comment.content %> <br>
 
 <% end %> <br>   
+
+
 
 
 <%= link_to 'View all the photos I commented ', photo_comments_path(@photo) %> <br> <br>

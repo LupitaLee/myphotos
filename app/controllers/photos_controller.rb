@@ -14,6 +14,8 @@ class PhotosController < ApplicationController
         if params[:q] && !params[:q].empty?
             @photos = @photos.search(params[:q].downcase)
         end
+        
+        @commented_photos = current_user.commented_photos
     
     end
 
@@ -66,6 +68,12 @@ class PhotosController < ApplicationController
         @photo.destroy 
         flash[:message]= "Photo deleted"
         redirect_to photos_path 
+
+    end
+
+    def most_commented 
+
+        @photos =  Photo.most_commented
 
     end
 

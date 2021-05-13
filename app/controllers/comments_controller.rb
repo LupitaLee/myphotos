@@ -15,7 +15,8 @@ class CommentsController < ApplicationController
     end
 
     def index
-        @comments = current_user.commented_photos
+        
+        @comments = @photo.comments
     
     end
 
@@ -25,6 +26,8 @@ class CommentsController < ApplicationController
     def new
         @comment = Comment.new
     end
+
+   
 
     
    

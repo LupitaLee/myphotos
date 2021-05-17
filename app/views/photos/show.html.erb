@@ -12,7 +12,13 @@
 
 <h1>Photo</h1> <br>
 
-<h2><%= @photo.title %></h2>
+<h2><%= @photo.title %></h2> <br>
+
+<% if @photo.image.attached? %>
+<%= image_tag(@photo.image, style: "width: 200px; display: block" )%>
+<% end %>
+
+
 <% if @photo.user_id == current_user.id%>
 <%= link_to 'Edit a Photo', edit_photo_path, class: 'nav-link' %><br>
 
@@ -36,8 +42,8 @@
 
 
 
-
-<%= link_to 'View all the photos I commented ', photo_comments_path(@photo) %> <br> <br>
+ 
+<%= link_to 'View all comments ', photo_comments_path(@photo) %> <br> <br>
 
 
 

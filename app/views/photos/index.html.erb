@@ -25,10 +25,11 @@
 
 
     <% @photos.each do |photo|  %>
-    
-    <%=  link_to "#{photo.title}", "/photos/#{photo.id}"%> <br>
-    
-   
+
+    <% if photo.image.attached? %>
+     <%= link_to image_tag(photo.image, style: "width: 200px; display: block" ), photo_path(photo)%> <br>
+    <% end %> 
+
 <% end  %><br>
 
 <h2>all commented photos</h2>

@@ -6,7 +6,10 @@
   <% @users.each do |user| %>
  Username:  <%= user.username%> <br> <br>
        <% user.photos.each do |photo|%>
-      Title:  <%= link_to photo.title, photo_path(photo)%> <br> 
+       <%= link_to photo.title, photo_path(photo)%> <br> 
+       <% if photo.image.attached? %>
+          <%= link_to image_tag(photo.image, style: "width: 200px; display: block" ), photo_path(photo)%> <br>
+        <% end %> 
         
         <% end %>
     <% end %>

@@ -4,22 +4,10 @@
 
 
 
-
-<%= form_tag("/photos", method: "get") do %>
- <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
-
-
-
-
-
-
-<h2>Welcome!
+<h2>Welcome! 
     <% if current_user.avatar.attached? %>
-          <%= image_tag(current_user.avatar) %>
-        <% end %><br> <br>
+          <%= image_tag(current_user.avatar, style: "width: 100px; display: block" ) %>
+        <% end %>
         
          <%= current_user.username %></h2><br>
 

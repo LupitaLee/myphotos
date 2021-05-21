@@ -1,14 +1,22 @@
 
 
+
+<%= form_tag("/users", method: "get") do %>
+ <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
 <section class="container-fluid bg7">
 
 
   <% @users.each do |user| %>
- Username:  <%= user.username%> -
+ <%= user.username%> -
     <% if user.avatar.attached? %>
-          <%= image_tag(user.avatar) %>
+          <%= image_tag(user.avatar, style: "width: 100px; display: block" ) %>
         <% end %><br> <br>
-        
+
        <% user.photos.each do |photo|%>
        <%= link_to photo.title, photo_path(photo)%> <br> 
        <% if photo.image.attached? %>

@@ -11,9 +11,7 @@ class PhotosController < ApplicationController
     def index
        
         @photos = current_user.photos.desc_order
-        if params[:q] && !params[:q].empty?
-            @photos = @photos.search(params[:q].downcase)
-        end
+        
         
         @commented_photos = current_user.commented_photos
     

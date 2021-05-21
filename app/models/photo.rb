@@ -6,7 +6,6 @@ class Photo < ApplicationRecord
   
 
   validates :title, presence: true
-  scope :search, -> (params){where("LOWER(title)= ?", params)}
 
  
   scope :desc_order, -> {order(created_at: :desc)}

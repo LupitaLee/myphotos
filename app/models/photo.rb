@@ -3,6 +3,7 @@ class Photo < ApplicationRecord
   has_many :comments, :dependent => :destroy
   has_many :users, through: :comments
   has_one_attached :image
+  
 
   validates :title, presence: true
   scope :search, -> (params){where("LOWER(title)= ?", params)}

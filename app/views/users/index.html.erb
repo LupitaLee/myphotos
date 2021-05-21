@@ -4,7 +4,11 @@
 
 
   <% @users.each do |user| %>
- Username:  <%= user.username%> <br> <br>
+ Username:  <%= user.username%> -
+    <% if user.avatar.attached? %>
+          <%= image_tag(user.avatar) %>
+        <% end %><br> <br>
+        
        <% user.photos.each do |photo|%>
        <%= link_to photo.title, photo_path(photo)%> <br> 
        <% if photo.image.attached? %>

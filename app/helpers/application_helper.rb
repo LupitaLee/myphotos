@@ -17,4 +17,6 @@ module ApplicationHelper
     def redirect_if_logged_in
         rredirect_to  root_path if logged_in?
     end
+
+    
 end

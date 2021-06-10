@@ -71,7 +71,7 @@ class PhotosController < ApplicationController
 
     def most_commented 
 
-        @photos =  Photo.most_commented
+        @photos =  Photo.most_commented.uniq
 
     end
 

@@ -2,5 +2,11 @@
 
 
 <% @photos.each do  |photo| %>
-<%= photo.title %> - has  <%= photo.comments.count %> comments<br> 
-<% end %>
+<% if photo.image.attached? %>
+     <%= link_to image_tag(photo.image, style: "width: 200px; display: block" ), photo_path(photo)%> <br>
+
+- has  <%= photo.comments.count %> comments<br> 
+<% end %><br>
+<% end  %><br>
+
+

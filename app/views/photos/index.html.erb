@@ -25,11 +25,18 @@
 
 <% end  %><br>
 
-<h2>all commented photos</h2>
+
+
+
+<h2>below view commented photos</h2>
 <% @commented_photos.each do |photo| %> <br>
 <%= link_to photo.title, photo_path(photo) %>
-<% end %>
+<% end %> <br>
 
+
+
+
+<h3><%= link_to 'view most_Commented photos', photos_most_commented_path, class: 'nav-link' %></h3> <br>
 </section>
 
 

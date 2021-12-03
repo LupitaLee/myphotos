@@ -1,6 +1,6 @@
 # Myphotos
 
-Welcome to Myphotos, in this website you will be able to signup, login and add photos and description which you will be able to edit and delete. To experiment with this code, follow the instrictions below.
+Welcome to Myphotos, in this web app you will be able to create your own account by signup and login. add photos and description which you will be able to edit and delete. To experiment with this code, follow the instrictions below.
 
 ## Fork and clone this repository
 click the link below
